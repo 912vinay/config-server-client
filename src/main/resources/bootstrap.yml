@@ -1,0 +1,21 @@
+spring:
+#  cloud:
+#    config:
+#      uri:
+#        - http://localhost:8888
+
+  profiles:
+    active: dev
+  application:
+    name: spring-config-client
+eureka:         #tells about the Eureka server details and its refresh time
+  instance:
+    leaseRenewalIntervalInSeconds: 1
+    leaseExpirationDurationInSeconds: 2
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+    healthcheck:
+      enabled: true
+    lease:
+      duration: 5
